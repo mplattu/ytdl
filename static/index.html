@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+</head>
+
+<body>
+  <ons-toolbar>
+    <div class="center">Submit</div>
+  </ons-toolbar>
+
+  <ons-page>
+    <ons-tabbar swipeable position="bottom">
+      <ons-tab page="page_submit.html" label="Submit" icon="fa-plus" active>
+      </ons-tab>
+      <ons-tab page="page_status.html" label="Status" icon="fa-sync">
+      </ons-tab>
+      <ons-tab page="page_download.html" label="Download" icon="fa-arrow-circle-down">
+      </ons-tab>
+    </ons-tabbar>
+  </ons-page>
+
+  <template id="page_submit.html">
+    <ons-page id="page_submit">
+      <div class="page">
+        <div id="app_submit"></div>
+      </div>
+    </ons-page>
+  </template>
+
+  <template id="page_status.html">
+    <ons-page id="page_status">
+      <div class="page">
+        <div id="app_status"></div>
+      </div>
+    </ons-page>
+  </template>
+
+  <template id="page_download.html">
+    <ons-page id="page_download">
+      <div class="page">
+        <div id="app_download"></div>
+      </div>
+    </ons-page>
+  </template>
+
+  <script src="main.js"></script>
+</body>
+</html>

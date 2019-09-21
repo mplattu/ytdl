@@ -1,0 +1,35 @@
+{
+  "name": "ytdl",
+  "version": "1.0.0",
+  "description": "This is a frontend for world-famous command-line tools youtube-dl and yle-dl.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mplattu/ytdl.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mplattu/ytdl/issues"
+  },
+  "homepage": "https://github.com/mplattu/ytdl#readme",
+  "dependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "onsenui": "^2.10.10",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-onsenui": "^1.11.2",
+    "react-table": "^6.10.3",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.8"
+  }
+}
