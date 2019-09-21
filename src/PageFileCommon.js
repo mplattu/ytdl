@@ -10,8 +10,14 @@ export class PageFileCommon extends React.Component {
 
     this.state = {
       tableData: [],
-      fileType: ""
+      fileType: "",
+      refreshHandle: null
     }
+  }
+
+  setRefresh() {
+    console.log("setRefresh: "+this.state.fileType);
+    this.state.refreshHandle = setTimeout(function() { this.updateStatusData(); }.bind(this), 5000);
   }
 
   updateStatusData() {
@@ -23,8 +29,8 @@ export class PageFileCommon extends React.Component {
     }
 
     ajax.postData(data)
-      .then(data => this.setState({tableData: data.files}))
-      .catch(error => this.setState({statusText:"Error: "+error}));
+      .then(data => { this.setState({tableData: data.files}); this.setRefresh(); } )
+      .catch(error => { this.setState({statusText:"Error: "+error}); this.setRefresh(); } );
   }
 
   getTranslatedIcon(icon) {
@@ -43,7 +49,16 @@ export class PageFileCommon extends React.Component {
   }
 
   onShow() {
-    // Called by show event in page_status (see index.js)
+    // Called by show event (see index.js)
     this.updateStatusData();
+  }
+
+  onHide() {
+    // Called by hide event (see index.js)
+    
+    if (this.state.refreshHandle != null) {
+      clearTimeout(this.state.refreshHandle);
+      this.state.refreshHandle = null;
+    }
   }
 }

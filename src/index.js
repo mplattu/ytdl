@@ -38,6 +38,10 @@ document.addEventListener('init', function(event) {
     document.getElementById("page_status").addEventListener("show", function(event) {
       domAppStatus.onShow();
     });
+
+    document.getElementById("page_status").addEventListener("hide", function(event) {
+      domAppStatus.onHide();
+    });
   }
 
   if (page == "page_download") {
@@ -45,6 +49,10 @@ document.addEventListener('init', function(event) {
 
     document.getElementById("page_download").addEventListener("show", function(event) {
       domAppDownload.onShow();
+    });
+
+    document.getElementById("page_download").addEventListener("hide", function(event) {
+      domAppDownload.onHide();
     });
   }
 });
