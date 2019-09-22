@@ -5,20 +5,45 @@
 </head>
 
 <body>
-  <ons-toolbar>
-    <div class="center">Submit</div>
-  </ons-toolbar>
 
-  <ons-page>
-    <ons-tabbar swipeable position="bottom">
-      <ons-tab page="page_submit.html" label="Submit" icon="fa-plus" active>
-      </ons-tab>
-      <ons-tab page="page_status.html" label="Status" icon="fa-sync">
-      </ons-tab>
-      <ons-tab page="page_download.html" label="Download" icon="fa-arrow-circle-down">
-      </ons-tab>
-    </ons-tabbar>
-  </ons-page>
+  <ons-navigator id="page_navigator" page="splitter.html">
+  </ons-navigator>
+
+  <template id="splitter.html">
+    <ons-page id="page_splitter">
+      <ons-splitter>
+        <ons-splitter-side id="page_splitter_left" swipeable width="250px" collapse swipe-target-width="50px">
+         <ons-page>
+           <div id="menu_left"></div>
+          </ons-page>
+        </ons-splitter-side>
+        <ons-splitter-content id="content" page="tabbar.html">
+        </ons-splitter-content>
+      </ons-splitter>
+    </ons-page>
+  </template>
+
+  <template id="tabbar.html">
+    <ons-page id="page_tabbar">
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button id="button_menu_left">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center" id="page_title"></div>
+      </ons-toolbar>
+
+      <ons-tabbar id="page_tabbar_tabs" swipeable position="bottom">
+        <ons-tab page="page_submit.html" label="Submit" icon="fa-plus" active>
+        </ons-tab>
+        <ons-tab page="page_status.html" label="Status" icon="fa-sync">
+        </ons-tab>
+        <ons-tab page="page_download.html" label="Download" icon="fa-arrow-circle-down">
+        </ons-tab>
+      </ons-tabbar>
+    </ons-page>
+  </template>
 
   <template id="page_submit.html">
     <ons-page id="page_submit">

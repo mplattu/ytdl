@@ -13,21 +13,41 @@ import {PageSubmit} from './PageSubmit';
 import {PageStatus} from './PageStatus';
 import {PageDownload} from './PageDownload';
 
+import {MenuLeft} from './MenuLeft';
+
 document.addEventListener('prechange', function(event) {
-  document.querySelector('ons-toolbar .center')
-    .innerHTML = event.tabItem.getAttribute('label');
+  document.getElementById('page_title').innerHTML = event.tabItem.getAttribute('label');
 });
 
 // Define global vars for all apps which must be called when their page is viewed
 var domAppStatus = null;
 var domAppDownload = null;
 
+function button_menu_left() {
+  console.log("button_menu_left()");
+}
+
 document.addEventListener('init', function(event) {
   var page = event.target.id;
 
-  console.log("Page Change: " + page);
+  console.log("init event for id: " + page);
 
   // Render page apps when the app nodes are rendered
+  if (page == "page_splitter") {
+    ReactDOM.render(<MenuLeft />, document.getElementById("menu_left"));
+  }
+
+  if (page == "page_tabbar") {
+    document.getElementById('button_menu_left').onclick = function() {
+      console.log('button_menu_left clicked');
+      document.getElementById("page_splitter_left").open();
+    }
+
+    document.getElementById('menu_left').onclick = function () {
+      setTimeout(function () { document.getElementById('page_splitter_left').close(); }, 50);
+    }
+  }
+
   if (page == "page_submit") {
     ReactDOM.render(<PageSubmit />, document.getElementById('app_submit'));
   }
