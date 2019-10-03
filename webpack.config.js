@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
   entry: './src/index.js',
   mode: 'production',
+  devtool: "eval",
   optimization: {
     minimize: false
   },

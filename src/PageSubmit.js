@@ -1,5 +1,4 @@
 var React = require('react');
-var Ons = require('react-onsenui');
 
 import Ajax from './Ajax';
 
@@ -45,69 +44,70 @@ export class PageSubmit extends React.Component {
   render() {
     return (
       <p>
-        <Ons.Input
-          underbar
+        <ons-input
+          modifier="underbar"
           value={this.state.url}
           onChange={(event) => { this.setState({url: event.target.value, statusText: ""})} }
-          placeholder="Paste URL here" />
+          placeholder="Paste URL here"></ons-input>
 
         <br/>
 
-        <Ons.ListHeader>
-          Post Processing Options
-        </Ons.ListHeader>
+        <ons-list>
+          <ons-list-header>
+            Post Processing Options
+            </ons-list-header>
 
-        <Ons.ListItem tappable>
-          <label className="left">
-            <Ons.Radio
-              name="target_type"
-              checked={this.state.targetType === "mp3"}
-              onChange={this.eventTargetChanged}
-              inputId="mp3"
-              value="mp3"
-              modifier='material' />
-          </label>
-          <label className="center" for="mp3">
-            MP3-audio
-          </label>
-        </Ons.ListItem>
+            <ons-list-item tappable>
+              <label className="left">
+                <ons-radio
+                  name="target_type"
+                  checked={this.state.targetType === "mp3"}
+                  onChange={this.eventTargetChanged}
+                  id="mp3"
+                  value="mp3"
+                  modifier='material'></ons-radio>
+              </label>
+              <label className="center" for="mp3">
+                MP3-audio
+              </label>
+            </ons-list-item>
 
-        <Ons.ListItem tappable>
-          <label className="left">
-            <Ons.Radio
-              name="target_type"
-              checked={this.state.targetType === "m4v_nokia500"}
-              onChange={this.eventTargetChanged}
-              inputId="m4v_nokia500"
-              value="m4v_nokia500"
-              modifier='material' />
-          </label>
-          <label className="center" for="m4v_nokia500">
-            MP4-video (Small)
-          </label>
-        </Ons.ListItem>
+            <ons-list-item tappable>
+              <label className="left">
+                <ons-radio
+                  name="target_type"
+                  checked={this.state.targetType === "m4v_nokia500"}
+                  onChange={this.eventTargetChanged}
+                  id="m4v_nokia500"
+                  value="m4v_nokia500"
+                  modifier='material'></ons-radio>
+              </label>
+              <label className="center" for="m4v_nokia500">
+                MP4-video (Small)
+              </label>
+            </ons-list-item>
 
-        <Ons.ListItem tappable>
-          <label className="left">
-            <Ons.Radio
-              name="target_type"
-              checked={this.state.targetType === "m4v_original"}
-              onChange={this.eventTargetChanged}
-              inputId="m4v_original"
-              value="m4v_original"
-              modifier='material' />
-          </label>
-          <label className="center" for="m4v_original">
-            MP4-video (Original)
-          </label>
-        </Ons.ListItem>
-
+            <ons-list-item tappable>
+              <label className="left">
+                <ons-radio
+                  name="target_type"
+                  checked={this.state.targetType === "m4v_original"}
+                  onChange={this.eventTargetChanged}
+                  id="m4v_original"
+                  value="m4v_original"
+                  modifier='material'></ons-radio>
+              </label>
+              <label className="center" for="m4v_original">
+                MP4-video (Original)
+              </label>
+            </ons-list-item>
+          </ons-list>
         <br/>
 
-        <Ons.Button
+        <ons-button
           onClick={this.eventSave}>
           Add Job
-        </Ons.Button>
+        </ons-button>
 
         <br/>
 

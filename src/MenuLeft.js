@@ -1,5 +1,4 @@
 var React = require('react');
-var Ons = require('react-onsenui');
 
 export class MenuLeft extends React.Component {
   constructor(props) {
@@ -30,19 +29,11 @@ export class MenuLeft extends React.Component {
 
   render() {
     return (
-      <Ons.List>
-        <Ons.ListItem tappable onClick={() => this.setTab(0)}>Submit</Ons.ListItem>
-        <Ons.ListItem tappable onClick={() => this.setTab(1)}>Status</Ons.ListItem>
-        <Ons.ListItem tappable onClick={() => this.setTab(2)}>Download</Ons.ListItem>
-      </Ons.List>
-    )
-  }
-
-  /*render() {
-    return (
       <ons-list>
-        <ons-list-item ><div onclick="console.log('foobar');">Submit</div></ons-list-item>
+        <ons-list-item tappable onClick={() => this.setTab(0)}>Submit</ons-list-item>
+        <ons-list-item tappable onClick={() => this.setTab(1)}>Status</ons-list-item>
+        <ons-list-item tappable onClick={() => this.setTab(2)}>Download</ons-list-item>
       </ons-list>
     )
-  }*/
+  }
 }

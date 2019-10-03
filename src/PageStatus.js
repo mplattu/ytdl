@@ -1,5 +1,4 @@
 var React = require('react');
-var Ons = require('react-onsenui');
 
 import ReactTable from 'react-table'
 import 'react-table/react-table.css'
@@ -23,7 +22,7 @@ export class PageStatus extends PageFileCommon {
       maxWidth:50,
       Cell: row => (
         <div>
-          <Ons.Icon icon={this.getTranslatedIcon(row.value)} />
+          <ons-icon icon={this.getTranslatedIcon(row.value)}></ons-icon>
         </div>
       )
     },

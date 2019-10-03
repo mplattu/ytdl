@@ -1,11 +1,32 @@
 var React = require('react'); // FIXME: This is not needed?
 var ReactDOM = require('react-dom');
-var ons = require('onsenui'); // FIXME: This is not needed?
-var Ons = require('react-onsenui'); // FIXME: This is not needed?
+//var ons = require('onsenui'); // FIXME: This is not needed?
+
+import ons from 'onsenui/esm';
+import 'onsenui/esm/elements/ons-page';
+import 'onsenui/esm/elements/ons-toolbar';
+import 'onsenui/esm/elements/ons-toolbar-button';
+import 'onsenui/esm/elements/ons-navigator';
+import 'onsenui/esm/elements/ons-splitter';
+import 'onsenui/esm/elements/ons-splitter-side';
+import 'onsenui/esm/elements/ons-splitter-content';
+import 'onsenui/esm/elements/ons-tab';
+import 'onsenui/esm/elements/ons-tabbar';
+
+import 'onsenui/esm/elements/ons-list';
+import 'onsenui/esm/elements/ons-list-header';
+import 'onsenui/esm/elements/ons-list-item';
+import 'onsenui/esm/elements/ons-icon';
+
+import 'onsenui/esm/elements/ons-input';
+import 'onsenui/esm/elements/ons-radio';
+import 'onsenui/esm/elements/ons-button';
 
 // Webpack CSS import
-import 'onsenui/css/onsenui.css';
-import 'onsenui/css/onsen-css-components.css';
+import 'onsenui/css/onsenui-core.min.css';
+import 'onsenui/css/font_awesome/css/all.min.css';
+import 'onsenui/css/font_awesome/css/v4-shims.min.css';
+import 'onsenui/css/onsen-css-components.min.css';
 import './custom.css';
 
 // Require page classes
